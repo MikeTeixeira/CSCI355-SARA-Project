@@ -1,0 +1,114 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 1px;
+    background-color: #E71939;
+
+    overflow: hidden;
+}
+
+.qc-logo {
+    width: 375px;
+    height: 200px;
+    z-index: 5;
+    position: absolute;
+    animation-duration: 2s;
+    animation-name: fadeIn;
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    left: 90%;
+    top: 25%;
+    transform: translateX(-50%);
+
+    img {
+        width: 500px;
+        height: 500px;
+        animation-duration: 2s;
+        animation-name: fadeIn;
+    }
+}
+
+
+
+// CIRCLE
+
+.top-circle {
+    clip-path: circle(52% at 91% 51%);
+    width: 45%;
+    height: 100%;
+    transform: rotateZ(-90deg);
+    top: -30%;
+    left: -20%;
+    position: absolute;
+    background-color: #FFF;
+    animation-duration: 2s;
+    animation-name: slideInFromLeft;
+}
+
+.right-circle {
+    -webkit-clip-path: circle(50% at 100% 50%);
+    clip-path: circle(50% at 100% 50%);
+    width: 45%;
+    height: 100%;
+    top: 15%;
+    float: right;
+    position: relative;
+    background-color: #FFF;
+    clear: both;
+    animation-duration: 2s;
+    animation-name: slideInFromRight;
+
+}
+
+
+
+
+
+// ANIMATIONS
+
+@keyframes fadeIn {
+
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft{
+    0%{
+        left: -80%;
+    }
+    100% {
+        left: -20%;
+    }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+

@@ -1,0 +1,43 @@
+.main-nav{
+    background-color: rgb(0, 240, 0);
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+}
+
+.hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    width: 3em;
+    height: 0.8em;
+    margin-right: 0.3em;
+    border-top: 0.2em solid #000;
+    border-bottom: 0.2em solid #000;
+    transition-property: all;
+    transition-duration: .7s;
+    z-index: 10;
+}
+
+.hamburger::before{
+    content: "";
+    position: absolute;
+    top: 0.3rem;
+    border-top: 0.2em solid #000;
+    width: 100%;
+    left: 0px;
+}
+
+.hamburger:hover {
+    transform: scale(1.2);
+}
+
+//Media styles for the hamburger menu
+@media screen and (min-width: 100px) and (max-width: 1400px) {
+    .main-nav {
+        display: none;
+    }
+}
