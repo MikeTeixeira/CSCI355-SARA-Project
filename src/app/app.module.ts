@@ -9,6 +9,10 @@ import { NavComponent } from './nav/nav.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { SchoolNavComponent } from './school-work/school-nav/school-nav.component';
 import { PortfolioNavComponent } from './portfolio/portfolio-nav/portfolio-nav.component';
+import { PhasesComponent } from './school-work/phases/phases.component';
+import { PhaseOneComponent } from './school-work/phases/phase-one/phase-one.component';
+import { NavPhasesComponent } from './school-work/phases/nav-phases/nav-phases.component';
+import { PhasesCardComponent } from './school-work/phases/phases-card/phases-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { PortfolioNavComponent } from './portfolio/portfolio-nav/portfolio-nav.c
     NavComponent,
     PortfolioComponent,
     SchoolNavComponent,
-    PortfolioNavComponent
+    PortfolioNavComponent,
+    PhasesComponent,
+    PhaseOneComponent,
+    NavPhasesComponent,
+    PhasesCardComponent
   ],
   imports: [
     BrowserModule,

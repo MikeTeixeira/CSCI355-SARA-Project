@@ -7,16 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  openNav:string = "close";
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  clicked(){
-    console.log("clicked");
+  triggerNav(){
+    
+    this.openNav = this.openNav === "open" ? "close": "open";
+
+    console.log(this.openNav);
   }
 
-  
+
 
 }

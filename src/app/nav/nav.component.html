@@ -1,13 +1,48 @@
 
-  <span (click)="clicked()" id="hamburger" class="hamburger"></span>
+<span
+ (click)="triggerNav()"
+ id="hamburger" 
+ class="hamburger"></span>
 
- <nav class="main-nav">
-  <ul class="nav-list" >
-    <li class="nav-list-item" >
-      <a class="nav-link" routerLink="/" routerLinkActive="active" >Home</a>
+
+<div 
+ [ngClass]="{container: true, display: openNav === 'open', noDisplay: openNav === 'close'}">
+  <nav class="nav-content" >
+    <li>
+      <a>
+        <span class="outer-span" >
+          <span class="inner-span">
+          Home
+          </span>
+        </span>
+      </a>
     </li>
-    <li class="nav-list-item" >
-      <a class="nav-link"  routerLink="/portfolio">Portfolio</a>
+    <li>
+      <a>
+        <span class="outer-span" >
+          <span class="inner-span">
+          Portfolio
+          </span>
+        </span>
+      </a>
     </li>
-  </ul>
-</nav> 
+    <li>
+      <a>
+        <span class="outer-span" >
+          <span class="inner-span">
+          About
+          </span>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <span class="outer-span" >
+          <span class="inner-span">
+          Contact
+          </span>
+        </span>
+      </a>
+    </li>
+  </nav>
+</div>

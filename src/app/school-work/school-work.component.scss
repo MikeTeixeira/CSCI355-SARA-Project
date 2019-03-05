@@ -1,68 +1,199 @@
+$small: 320px;
+$medium: 600px;
+
+
 .container{
     width: 100vw;
     height: 100vh;
     position: relative;
     z-index: 1px;
-    background-color: #E71939;
-
     overflow: hidden;
 }
 
 .qc-logo {
-    width: 375px;
-    height: 200px;
     z-index: 5;
     position: absolute;
-    animation-duration: 2s;
-    animation-name: fadeIn;
 }
 
-.content {
+.bitmoji-wrapper {
     position: absolute;
     z-index: 1;
-    left: 90%;
-    top: 25%;
     transform: translateX(-50%);
+}
 
-    img {
-        width: 500px;
-        height: 500px;
-        animation-duration: 2s;
-        animation-name: fadeIn;
+.banner {
+background-color: #68829E;
+width: 100vw;
+height: 45vh;
+}
+
+
+.top-circle {
+    position: absolute;
+    background-color: #FFF;
+}
+
+#btn-detail {
+    color: white;
+    text-decoration: none;
+}
+
+
+//SMALL CELL PHONES
+@media (min-width: 0px) and (max-width: 400px){
+
+    .content>h2 {
+        font-size: 1em;
+    }
+
+    #bitmoji-head {
+    width: 200px;
+    height: 200px;
+    }
+
+    #btn-detail{
+        font-size: 17px;
     }
 }
 
+@media (min-width: 400px) and (max-width: 800px){
+
+    .content>h2 {
+        font-size: 1.2em;
+    }
 
 
-// CIRCLE
+    #bitmoji-head {
+        width: 275px;
+        height: 275px;
+    }
 
-.top-circle {
-    clip-path: circle(52% at 91% 51%);
-    width: 45%;
-    height: 100%;
-    transform: rotateZ(-90deg);
-    top: -30%;
-    left: -20%;
-    position: absolute;
-    background-color: #FFF;
-    animation-duration: 2s;
-    animation-name: slideInFromLeft;
+    #btn-detail {
+        font-size: 22px;
+    }
+
+
 }
 
-.right-circle {
-    -webkit-clip-path: circle(50% at 100% 50%);
-    clip-path: circle(50% at 100% 50%);
-    width: 45%;
-    height: 100%;
-    top: 15%;
-    float: right;
+// DYNAMIC MEDIA SCREENS FOR MOBILE PHONES
+@media (min-width: 0px) and (max-width: 800px) {
+  .banner-content {
     position: relative;
-    background-color: #FFF;
-    clear: both;
+    left: 50;
+  }
+
+  .top-circle {
+    top: -100px;
+    left: -90px;
+    -webkit-clip-path: ellipse(35%);
+    clip-path: ellipse(35%);
+    transform: rotate(90deg);
+    width: 250px;
+    height: 250px;
+    animation: slideInFromLeft;
     animation-duration: 2s;
-    animation-name: slideInFromRight;
+  }
+
+  .qc-logo {
+    width: 150px;
+    height: 100px;
+    animation: fadeIn;
+    animation-duration: 3s;
+  }
+
+  .banner {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      img {
+        animation: fadeIn;
+        animation-duration: 3s;
+
+      }
+  }
+
+
+  .content {
+    position: relative;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        margin-top: 0px;
+        letter-spacing: .05em;
+        font-family: 'Montserrat', sans-serif;
+    }
+  }
+
+
+
+  #cta-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: 0px 0px 10px black;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    background-color: #263659;
+    color: white;
+
+  }
+
+
+
+  #btn-detail {
+    margin-left: 10px;
+    letter-spacing: .05em;
+  }
+
+  #arrow-down{
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      animation: breathing;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+      cursor: pointer;
+  }
 
 }
+
+
+@media(min-width: 800px) and (max-width: 1000px){
+
+}
+
+@media (min-width: 1000px) and (max-width: 1600px){
+
+}
+
+// Changing dynamics of circles and images
+@media (min-width: 1600px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,23 +201,23 @@
 
 // ANIMATIONS
 
+
+//Fade in for mobile 0-800px
 @keyframes fadeIn {
 
     0% {
         opacity: 0;
     }
 
+
     25% {
-        opacity: 0;
+      opacity: 0;
     }
 
     50% {
-        opacity: 0;
+      opacity: 0;
     }
 
-    75%{
-        opacity: 0;
-    }
 
     100% {
         opacity: 1;
@@ -95,10 +226,10 @@
 
 @keyframes slideInFromLeft{
     0%{
-        left: -80%;
+        left: -1000px;
     }
     100% {
-        left: -20%;
+        left: -90px;
     }
 }
 
@@ -109,6 +240,28 @@
   100% {
     left: 0%;
   }
+}
+
+
+@keyframes breathing {
+
+    0% {
+        bottom: 20px;
+    }
+
+
+    50% {
+      bottom: 30px;
+    }
+
+
+    100% {
+      bottom: 20px;
+    }
+
+
+
+
 }
 
 
