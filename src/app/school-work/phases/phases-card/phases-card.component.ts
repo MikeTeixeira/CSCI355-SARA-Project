@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhasesCardComponent implements OnInit {
 
-  public phases: string[] = [{
+  public phases: [{
     "phase-one": {
       title: "Phase One",
       description: "Displays a hard coded search result with multiple values",
