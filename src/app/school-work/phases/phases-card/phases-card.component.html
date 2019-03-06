@@ -1,7 +1,9 @@
-<div class="phase-card">
-  <li *ngFor="let phase of phases; let i = index">
-    {{i}}
-    <h2>{{phase.title}}</h2>
-    <p>{{phase.description}}</p>
-  </li>
+<div class="content" >
+  <div class="phase-card-wrapper">
+    <div *ngFor="let phase of phases; let i = index" class="phase-card">
+        <li>
+          <p class="phase-title" >{{phase.title}}</p>
+        </li>
+    </div>
+  </div>
 </div>

@@ -7,32 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhasesCardComponent implements OnInit {
 
-  public phases: [{
-    "phase-one": {
+  public phases:any[] = [
+    {
       title: "Phase One",
       description: "Displays a hard coded search result with multiple values",
     },
-    "phase-two":{
-      title: "Phase One",
+    {
+      title: "Phase Two",
       description: "Displays a hard coded search result with multiple values",
     }, 
-    "phase-three":{
-      title: "Phase One",
+    {
+      title: "Phase Three",
       description: "Displays a hard coded search result with multiple values",
     } ,
-    "phase-four": {
-      title: "Phase One",
+    {
+      title: "Phase Four",
       description: "Displays a hard coded search result with multiple values",
     },  
-    "phase-five": {
-      title: "Phase One",
+    {
+      title: "Phase Five",
       description: "Displays a hard coded search result with multiple values",
-    }
-  }];
+    }]
+
 
   constructor() { }
 
+
   ngOnInit() {
+  
   }
 
 }
