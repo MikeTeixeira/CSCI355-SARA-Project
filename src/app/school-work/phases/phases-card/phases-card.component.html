@@ -1,9 +1,11 @@
 <div class="content" >
   <div class="phase-card-wrapper">
-    <div *ngFor="let phase of phases; let i = index" class="phase-card">
+    <div  *ngFor="let phase of phases; let i = index" class="phase-card">
+      <a href="portfolio/queens-college/phases/{{i+1}}">
         <li>
           <p class="phase-title" >{{phase.title}}</p>
         </li>
+      </a>
     </div>
   </div>
 </div>

@@ -64,3 +64,41 @@
   display: block;
 }
 
+// MEDIA SCREENS FOR MOBILE PHONES
+@media (min-width: 0px) and (max-width: 800px) {
+  .container {
+    top: 45%;
+  }
+  .nav-list {
+    justify-content: space-evenly;
+  }
+  .dropdown-btn {
+    font-size: 20px;
+  }
+  .dropdown-content {
+    font-size: 15px;
+  }
+  #dropdown-about {
+    right: 10px;
+  }
+}
+
+@media(min-width: 200px) and (max-width: 400px) {
+  .dropdown-btn {
+    font-size: 12px;
+  }
+}
+
+@media(min-width: 400px) and (max-width: 500px) {
+  .dropdown-btn {
+    font-size: 15px;
+  }
+}
+
+@media(min-width: 0px) and (max-width: 350px) {
+  .dropdown-btn {
+    font-size: 10px;
+  }
+}
+
+

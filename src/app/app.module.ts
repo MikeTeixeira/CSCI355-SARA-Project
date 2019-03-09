@@ -13,6 +13,7 @@ import { PhasesComponent } from './school-work/phases/phases.component';
 import { PhaseOneComponent } from './school-work/phases/phase-one/phase-one.component';
 import { NavPhasesComponent } from './school-work/phases/nav-phases/nav-phases.component';
 import { PhasesCardComponent } from './school-work/phases/phases-card/phases-card.component';
+import { PhaseResultComponent } from './school-work/phases/phase-result/phase-result.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PhasesCardComponent } from './school-work/phases/phases-card/phases-car
     PhasesComponent,
     PhaseOneComponent,
     NavPhasesComponent,
-    PhasesCardComponent
+    PhasesCardComponent,
+    PhaseResultComponent
   ],
   imports: [
     BrowserModule,

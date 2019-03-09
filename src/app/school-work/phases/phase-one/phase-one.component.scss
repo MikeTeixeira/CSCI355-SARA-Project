@@ -1,0 +1,50 @@
+@import '../../../../styles.scss';
+
+
+.container {
+    font-family: $navFont;
+}
+
+@media (min-width: 0px) and (max-width: 800px){
+    #back-btn {
+        position: absolute;
+        top: 7%;
+        left: 3%;
+        font-size: 10px;
+    }
+
+    .search-bar {
+        padding-top: 60px;
+        background-color: #F1F1F2;
+    }
+
+    #current-phase {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .search-form {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .search-input {
+        border: 0;
+        width: 200px;
+        height: 30px;
+        border-radius: 20px 0px 0px 20px;
+        padding-left: 15px;
+        font-size: 15px;
+        outline: none;
+    }
+
+    .search-btn {
+
+    background-color: gray;
+    border-radius: 0px 20px 20px 0px;
+    border: none;
+    font-size: 13px;
+    }
+
+}

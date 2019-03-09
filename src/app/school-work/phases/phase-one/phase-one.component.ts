@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhaseOneComponent implements OnInit {
 
+  public phaseOneCount: number = 10;
+
   constructor() { }
 
   ngOnInit() {
