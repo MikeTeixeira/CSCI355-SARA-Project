@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { phaseOneResults } from './placeholder-results-data';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class PhaseResultComponent implements OnInit {
 
   public phaseOne: boolean = false;
+  public results = phaseOneResults;
 
 
   constructor(private router: Router) { }
@@ -21,5 +23,10 @@ export class PhaseResultComponent implements OnInit {
       this.phaseOne = true;
     }
   }
+
+  onSubmit(e){
+
+  }
+
 
 }

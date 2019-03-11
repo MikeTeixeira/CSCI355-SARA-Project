@@ -1,8 +1,16 @@
-<div *ngIf="phaseOne" id="phase-one" class="search-container">
-  <div class="search-box">
+<div *ngIf="phaseOne" 
+  id="phase-one" 
+  class="search-container">
+  <div
+   class="results"  
+   *ngFor='let item of results | keyvalue'>
+  <div 
+  class="search-box"
+  *ngFor="let result of item.value">
     <div class="search-results">
-      <a class="search-link" href="#"> link </a>
-      <p class="search-description" > Description </p>
+      <a target="_blank" class="search-title" href="{{ result.link }}">{{result.title}}</a>
+      <a target="_blank" class="search-link" href="{{ result.link }}">{{result.link}}</a>
+      <p class="search-description" > {{result.description}} </p>
     </div>
   </div>
 </div>

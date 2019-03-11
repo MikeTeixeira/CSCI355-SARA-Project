@@ -1,21 +1,33 @@
 <div class="container" >
-  <span id="back-btn">Back</span>
+  <span id="back-btn"><a href="/portfolio/queens-college/phases">Back</a></span>
 
-  <div class="search-bar">
+  <div #scrollTo id="search-bar" class="search-bar">
     <div id="current-phase">
       <p> Phase One</p>
     </div>
-    <form class="search-form" >
-      <input 
+    <form (ngSubmit)="onSubmit($event)" class="search-form" >
+      <input
+        disabled="true" 
         class="search-input"
         placeholder="What's the meaning of life?" 
         type="text" />
 
-      <button 
+      <button
+      [disabled]="true"
       class="search-btn"
       type="submit">Search</button>
     </form>
   </div>
 
-    <app-phase-result></app-phase-result>
+    <span 
+    *ngIf="displayScrollUp"
+    (click)="scrollTop(scrollTo)"
+    id="arrow-up" >
+        <img src="../../../assets/images/upload.png" />
+    </span>
+
+    <app-phase-result
+    
+    >
+    </app-phase-result>
 </div>

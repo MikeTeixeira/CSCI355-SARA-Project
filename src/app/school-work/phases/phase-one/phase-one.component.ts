@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-phase-one',
@@ -7,11 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhaseOneComponent implements OnInit {
 
-  public phaseOneCount: number = 10;
+  public displayScrollUp: boolean = false;
+
 
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  @HostListener("window:scroll", [])
+  onWindowScroll(){
+    let offset = window.pageYOffset;
+    let searchBoxHeight = document.getElementById("search-bar").offsetHeight;
+
+    if(offset > searchBoxHeight){
+      this.displayScrollUp = true;
+      console.log(offset);
+    } else {
+      this.displayScrollUp = false;
+    }
+  }
+
+  scrollTop(el: HTMLElement){
+    el.scrollIntoView();
   }
 
 }
