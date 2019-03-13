@@ -14,6 +14,13 @@ import { PhaseOneComponent } from './school-work/phases/phase-one/phase-one.comp
 import { NavPhasesComponent } from './school-work/phases/nav-phases/nav-phases.component';
 import { PhasesCardComponent } from './school-work/phases/phases-card/phases-card.component';
 import { PhaseResultComponent } from './school-work/phases/phase-result/phase-result.component';
+import { BrowserComponent } from './browser/browser.component';
+import { WindowComponent } from './browser/window/window.component';
+import { ScreenComponent } from './browser/screen/screen.component';
+import { LocationComponent } from './browser/location/location.component';
+import { GeolocationComponent } from './browser/geolocation/geolocation.component';
+import { ContactComponent } from './contact/contact.component';
+import { DevelopersComponent } from './developers/developers.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +35,14 @@ import { PhaseResultComponent } from './school-work/phases/phase-result/phase-re
     PhaseOneComponent,
     NavPhasesComponent,
     PhasesCardComponent,
-    PhaseResultComponent
+    PhaseResultComponent,
+    BrowserComponent,
+    WindowComponent,
+    ScreenComponent,
+    LocationComponent,
+    GeolocationComponent,
+    ContactComponent,
+    DevelopersComponent
   ],
   imports: [
     BrowserModule,

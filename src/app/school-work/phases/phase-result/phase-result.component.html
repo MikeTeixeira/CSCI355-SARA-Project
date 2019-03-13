@@ -1,16 +1,37 @@
-<div *ngIf="phaseOne" 
-  id="phase-one" 
-  class="search-container">
+<div 
+  *ngIf="!isLargeDisplay"
+  class="screen-container">
+  <div *ngIf="phaseOne" 
+    id="phase-one" 
+    class="search-container">
+    <div
+    class="results"  
+    *ngFor='let item of results | keyvalue'>
+    <div 
+    class="search-box"
+    *ngFor="let result of item.value">
+      <div class="search-results">
+        <a target="_blank" class="search-title" href="{{ result.link }}">{{result.title}}</a>
+        <a target="_blank" class="search-link" href="{{ result.link }}">{{result.link}}</a>
+        <p class="search-description" > {{result.description}} </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div 
+  class="screen-container-large">
   <div
-   class="results"  
+   class="results-large"  
    *ngFor='let item of results | keyvalue'>
-  <div 
-  class="search-box"
-  *ngFor="let result of item.value">
-    <div class="search-results">
-      <a target="_blank" class="search-title" href="{{ result.link }}">{{result.title}}</a>
-      <a target="_blank" class="search-link" href="{{ result.link }}">{{result.link}}</a>
-      <p class="search-description" > {{result.description}} </p>
+    <div 
+    class="search-box-large"
+    *ngFor="let result of item.value">
+      <div class="search-results-large">
+        <a target="_blank" class="search-title-large" href="{{ result.link }}">{{result.title}}</a>
+        <a target="_blank" class="search-link-large" href="{{ result.link }}">{{result.link}}</a>
+        <p class="search-description-large" > {{result.description}} </p>
+      </div>
     </div>
   </div>
 </div>

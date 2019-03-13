@@ -1,4 +1,6 @@
-<div class="container" >
+<div 
+  *ngIf="!isLargeDisplay"
+  class="container-mobile" >
   <span id="back-btn"><a href="/portfolio/queens-college/phases">Back</a></span>
 
   <div #scrollTo id="search-bar" class="search-bar">
@@ -26,8 +28,46 @@
         <img src="../../../assets/images/upload.png" />
     </span>
 
-    <app-phase-result
-    
-    >
-    </app-phase-result>
+    <app-phase-result></app-phase-result>
+</div>
+
+
+
+<div 
+  *ngIf="isLargeDisplay"
+  class="container-large-display">
+
+  <app-nav-phases></app-nav-phases>
+
+  <div class="current-phase-block">
+    <h1>Phase One</h1>
+  </div>
+
+  <div class="container-large-search">
+    <div class="background"></div>
+
+
+    <div class="search-content-large">
+      <div class="search-content-large-left">
+
+        <div class="search-form-wrapper-large">
+          <form class="search-form-large" >
+            <input class="search-input-large" type="text" [disabled]="true" />
+
+            <button class="search-button-large" type="submit" [disabled]="true">Search</button>
+          </form>
+        </div>
+        
+        <div class="search-result-container-large">
+          <app-phase-result></app-phase-result>
+        </div>  
+      </div>
+
+
+      <div class="search-content-large-right">
+
+      </div>
+    </div>
+  </div>
+
 </div>
