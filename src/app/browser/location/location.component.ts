@@ -7,14 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationComponent implements OnInit {
 
-  public locationData: string = " ";
+  public href: string = " ";
+  public hostName: string;
+  public pathName: string;
+  public protocol: string;
 
   constructor() { }
 
   ngOnInit() {
 
-    this.locationData = window.location.href;
-    
+    this.href = window.location.href;
+    this.hostName = window.location.hostname;
+    this.pathName = window.location.pathname;
+    this.protocol = window.location.protocol;
   }
 
 }

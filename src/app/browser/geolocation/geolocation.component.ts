@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeolocationComponent implements OnInit {
 
+  public latitude: string;
+
   constructor() { }
 
   ngOnInit() {
+    if(window.navigator.geolocation){
+      navigator.geolocation.getCurrentPosition((res) => {
+
+        setTimeout(() => {
+          this.latitude = "" + res.coords.latitude;
+        },3000)
+      })
+    }
+    
   }
+
 
 }

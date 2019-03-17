@@ -21,6 +21,7 @@ import { LocationComponent } from './browser/location/location.component';
 import { GeolocationComponent } from './browser/geolocation/geolocation.component';
 import { ContactComponent } from './contact/contact.component';
 import { DevelopersComponent } from './developers/developers.component';
+import { NavigatorComponent } from './browser/navigator/navigator.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DevelopersComponent } from './developers/developers.component';
     LocationComponent,
     GeolocationComponent,
     ContactComponent,
-    DevelopersComponent
+    DevelopersComponent,
+    NavigatorComponent
   ],
   imports: [
     BrowserModule,
