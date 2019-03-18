@@ -9,10 +9,6 @@ export class PhasesCardComponent implements OnInit {
 
   public phases:any[] = [
     {
-      title: "Phase One",
-      description: "Displays a hard coded search result with multiple values",
-    },
-    {
       title: "Phase Two",
       description: "Displays a hard coded search result with multiple values",
     }, 
