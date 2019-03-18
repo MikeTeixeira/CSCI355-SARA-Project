@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class GeolocationComponent implements OnInit {
 
   public latitude: string;
+  public longitude: string;
 
   constructor() { }
 
@@ -17,7 +18,8 @@ export class GeolocationComponent implements OnInit {
 
         setTimeout(() => {
           this.latitude = "" + res.coords.latitude;
-        },3000)
+          this.longitude = "" + res.coords.longitude;
+        },1000)
       })
     }
     
