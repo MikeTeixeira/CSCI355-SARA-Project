@@ -21,15 +21,16 @@
     .phase-card {
         width: 100vw;
         height: 250px;
-        background-color: green;
+        background-color: white;
+        color: white;
         cursor: pointer;
     }
 
     .phase-card:hover{
 
         .phase-title {
-            opacity: 1;
-            transform: scale(1.1);
+            // opacity: 1;
+            // transform: scale(1.1);
 
         }
     }
@@ -42,8 +43,9 @@
         font-size: 40px;
         letter-spacing: .1em;
         font-family: $navFont;
-        opacity: .1;
-        transition: all ease-out .4s;
+        // opacity: .1;
+        // transition: all ease-out .4s;
+        color: black;
 
     }
 }
