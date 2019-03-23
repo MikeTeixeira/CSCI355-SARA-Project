@@ -52,11 +52,15 @@ const onListening = () => {
   debug("Listening on " + bind);
 };
 
-
 //Sets up the port
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
+if(app.settings.env !== "development"){
+  process.env.ALLOW_ORIGIN = process.env.PROD_DOMAIN;
+} else {
+  process.env.ALLOW_ORIGIN = process.env.DEV_DOMAIN;
+}
 
 //Sets up the server and listens to errors and listening
 const server = http.createServer(app);
