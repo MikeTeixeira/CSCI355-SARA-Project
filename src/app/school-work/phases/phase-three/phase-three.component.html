@@ -1,0 +1,51 @@
+<div 
+  *ngIf="!isLargeDisplay"
+  class="container-mobile" >
+  <span id="back-btn"><a href="/portfolio/queens-college/phases">Back</a></span>
+
+  <div #scrollTo id="search-bar" class="search-bar">
+    <div id="current-phase">
+      <p> Phase Three</p>
+    </div>
+    <form class="search-form" >
+
+      <button
+      id="example"
+      (click)="filePicker.click()"
+      class="search-btn"
+      type="button">Upload File</button>
+
+
+      <input
+      #filePicker
+      multiple
+      ng2FileSelect
+      [uploader]="uploader" 
+      type="file" 
+      placeholder="Upload File"  />
+    </form>
+
+    <div *ngFor="let item of uploader.queue">
+      <div class="filename">{{item.file.name}}</div>
+      <div class="file-progress">Place holder for file progress</div>
+
+      <div class="file-buttons">
+        <button type="button" (click)="item.upload()">Upload</button>
+        <button type="button" (click)="item.remove()">Remove</button>
+      </div>
+
+    </div>
+  </div>
+
+    <span 
+    *ngIf="displayScrollUp"
+    (click)="scrollTop(scrollTo)"
+    id="arrow-up" >
+        <img src="../../../assets/images/upload.png" />
+    </span>
+
+    <app-phase-three-results
+      [jsonFile]="jsonFile"
+    >
+    </app-phase-three-results>
+</div>

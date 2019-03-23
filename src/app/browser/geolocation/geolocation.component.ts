@@ -19,7 +19,7 @@ export class GeolocationComponent implements OnInit {
         setTimeout(() => {
           this.latitude = "" + res.coords.latitude;
           this.longitude = "" + res.coords.longitude;
-        },1000)
+        },500)
       })
     }
     

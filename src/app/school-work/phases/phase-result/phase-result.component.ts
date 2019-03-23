@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { phaseOneResults } from './placeholder-results-data';
 
 
@@ -10,26 +9,21 @@ import { phaseOneResults } from './placeholder-results-data';
 })
 export class PhaseResultComponent implements OnInit {
 
-  public phaseOne: boolean = false;
   public results = phaseOneResults;
   public isLargeDisplay: boolean = false;
+  
 
-
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
-    const url = this.router.url;
-
-    if(url === "/portfolio/queens-college/phases/1"){
-      this.phaseOne = true;
-    }
-
     if(window.innerWidth >= 870){
       this.isLargeDisplay = true;
     } else {
       this.isLargeDisplay = false;
     }
   }
+
+
 
   @HostListener("window:resize", ['$event'])
   windowResize(event){

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule } from '@angular/common/http';
+import {FileSelectDirective} from 'ng2-file-upload';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +23,8 @@ import { GeolocationComponent } from './browser/geolocation/geolocation.componen
 import { ContactComponent } from './contact/contact.component';
 import { DevelopersComponent } from './developers/developers.component';
 import { NavigatorComponent } from './browser/navigator/navigator.component';
+import { PhaseThreeComponent } from './school-work/phases/phase-three/phase-three.component';
+import { PhaseThreeResultsComponent } from './school-work/phases/phase-three/phase-three-results/phase-three-results.component';
 
 @NgModule({
   declarations: [
@@ -44,11 +47,18 @@ import { NavigatorComponent } from './browser/navigator/navigator.component';
     GeolocationComponent,
     ContactComponent,
     DevelopersComponent,
-    NavigatorComponent
+    NavigatorComponent,
+    PhaseThreeComponent,
+    PhaseThreeResultsComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+  ],
+  exports:[
+
   ],
   providers: [],
   bootstrap: [AppComponent]

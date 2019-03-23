@@ -1,0 +1,102 @@
+.search-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  top: 18px;
+}
+
+.search-box {
+  background-color: #68829E;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.search-description {
+  margin-bottom: 0px;
+  text-overflow: ellipsis;
+  width: 100%;
+  height: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  white-space: nowrap;
+}
+
+.results {
+  margin: 20px 13px;
+}
+
+.search-results {
+  overflow: hidden;
+  height: 100%;
+}
+
+.search-title,
+.search-description {
+  color: black;
+}
+
+.search-title,
+.search-link {
+  cursor: pointer;
+}
+
+.search-link {
+  display: block;
+  margin-top: 10px;
+}
+
+@media (min-width: 0px) and (max-width: 870px) {
+  .search-title {
+    font-size: 17px;
+  }
+  .search-link {
+    font-size: 14px;
+  }
+  .search-description {
+    font-size: 11px;
+    margin-bottom: 0px;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    line-height: 1.3em;
+  }
+}
+
+@media (min-width: 870px) and (max-width: 1440px) {
+  .search-title {
+    font-size: 20px;
+  }
+  .search-description {
+    height: 100%;
+  }
+  .search-box {
+    background-color: #68829E;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 100px;
+    min-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
+  }
+  .search-description {
+    font-size: 15px;
+    width: 100%;
+    height: 60px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    line-height: 1.3em;
+  }
+}
+

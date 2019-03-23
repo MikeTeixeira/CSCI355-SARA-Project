@@ -2,18 +2,19 @@
   *ngIf="!isLargeDisplay"
   class="screen-container">
   <div  
-    id="phase-one" 
+    id="phase-three" 
     class="search-container">
     <div
     class="results"  
-    *ngFor='let item of results | keyvalue'>
+    *ngFor='let item of jsonFile | keyvalue'>
     <div 
-    class="search-box"
-    *ngFor="let result of item.value">
+    class="search-box">
+
+    
       <div class="search-results">
-        <a target="_blank" class="search-title" href="{{ result.link }}">{{result.title}}</a>
-        <a target="_blank" class="search-link" href="{{ result.link }}">{{result.link}}</a>
-        <p class="search-description" > {{result.description}} </p>
+        <a target="_blank" class="search-title" href="{{ item.url }}">{{item.title}}</a>
+        <a target="_blank" class="search-link" href="{{ item.url }}">{{item.link}}</a>
+        <p class="search-description" > {{item.description}} </p>
       </div>
     </div>
   </div>

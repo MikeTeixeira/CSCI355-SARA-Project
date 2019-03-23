@@ -13,6 +13,7 @@ import { GeolocationComponent } from 'src/app/browser/geolocation/geolocation.co
 import { ContactComponent } from './contact/contact.component';
 import { DevelopersComponent } from 'src/app/developers/developers.component';
 import { NavigatorComponent } from './browser/navigator/navigator.component';
+import { PhaseThreeComponent } from 'src/app/school-work/phases/phase-three/phase-three.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'portfolio/queens-college', component: SchoolWorkComponent},
   {path: 'portfolio/queens-college/phases', component: PhasesComponent},
   {path: 'portfolio/queens-college/phases/1', component: PhaseOneComponent},
+  {path: 'portfolio/queens-college/phases/3', component: PhaseThreeComponent},
   {path: 'browser/queens-college/browser', component: BrowserComponent},
   {path: 'browser/queens-college/browser/navigator-info', component: NavigatorComponent},
   {path: 'browser/queens-college/browser/window-info', component: WindowComponent},
