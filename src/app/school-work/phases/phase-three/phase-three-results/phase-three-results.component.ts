@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
-import {UploadService} from 'src/app/services/upload.service';
+import {FileService} from 'src/app/services/file.service';
 
 @Component({
   selector: 'app-phase-three-results',

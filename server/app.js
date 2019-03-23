@@ -12,7 +12,9 @@ app.use(bodyParser.urlencoded({extended: true|false}));
 
 
 app.use((req, res, next) => {
-res.setHeader('Access-Control-Allow-Origin', "http://localhost:4200"),
+
+
+res.setHeader('Access-Control-Allow-Origin', "http://localhost:4200 "),
     res.setHeader(
         'Access-Control-Allow-Headers',
         'Origin, X-Requested-With, Content-Type, Accept');
@@ -28,7 +30,7 @@ res.setHeader('Access-Control-Allow-Origin', "http://localhost:4200"),
 const uploadRoutes = require('./routes/phase-three/uploads.js');
 
 
-app.use('/api/uploads', uploadRoutes);
+app.use('/api/file', uploadRoutes);
 
 
 

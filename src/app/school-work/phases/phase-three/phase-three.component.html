@@ -20,6 +20,7 @@
       #filePicker
       multiple
       ng2FileSelect
+      accept="json, csv, xml"
       [uploader]="uploader" 
       type="file" 
       placeholder="Upload File"  />
@@ -34,6 +35,13 @@
         <button type="button" (click)="item.remove()">Remove</button>
       </div>
 
+    </div>
+  </div>
+
+  <div class="download-section" >
+    <div class="download-card" *ngFor="let item of attachmentList, let i = index">
+      <h3>{{item.originalName}}</h3>
+      <button type="button" (click)="download(i)">Download</button>
     </div>
   </div>
 
