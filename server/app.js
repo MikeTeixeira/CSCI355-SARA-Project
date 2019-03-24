@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: true|false}));
 //Sets the headers to be used to allow access to certain method calls
 //Sets headers to allow access across different hosts
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', process.env.NODE_ENV !== "development" ? process.env.PROD_DOMAIN : process.env.DEV_DOMAIN ),
+    res.setHeader('Access-Control-Allow-Origin', process.env.PROD_DOMAIN),
         res.setHeader(
             'Access-Control-Allow-Headers',
             'Origin, X-Requested-With, Content-Type, Accept');
