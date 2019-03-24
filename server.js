@@ -3,8 +3,7 @@
 const app = require("./server/app");
 const debug = require("debug")("node-angular");
 const http = require("http");
-const bodyParser = require('body-parser')
-var multer = require('multer');
+const bodyParser = require('body-parser');
 
 
 //Makes sure the port number is a valid number

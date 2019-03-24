@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 // BluePrint for the model
 const fileSchema = mongoose.Schema({
     name: String,
-    size: Number,
     type: String,
-    data: [],
+    url: String,
+    data: Object,
 });
 
 module.exports = mongoose.model('File', fileSchema);
