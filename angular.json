@@ -25,7 +25,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/_redirects"
+              "src/_redirects",
+              "src/app/file-uploads"
+
             ],
             "styles": [
               "src/styles.scss"
@@ -89,7 +91,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/app/file-uploads"
             ]
           }
         },

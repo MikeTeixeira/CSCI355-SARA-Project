@@ -1,11 +1,9 @@
-<div 
-  *ngIf="!isLargeDisplay"
-  class="container-mobile" >
+<div>
   <span id="back-btn"><a href="/portfolio/queens-college/phases">Back</a></span>
 
   <div #scrollTo id="search-bar" class="search-bar">
     <div id="current-phase">
-      <p> Phase Three</p>
+      <p class="phase-header"> Phase Three</p>
     </div>
     <form class="search-form" >
 
@@ -13,47 +11,57 @@
       id="example"
       (click)="filePicker.click()"
       class="search-btn"
-      type="button">Upload File</button>
+      type="button">Import File</button>
 
 
       <input
       #filePicker
       multiple
       ng2FileSelect
-      accept="json, csv, xml"
+      accept=".json, .csv, .xml"
       [uploader]="uploader" 
       type="file" 
       placeholder="Upload File"  />
     </form>
+  </div>
 
-    <div *ngFor="let item of uploader.queue">
-      <div class="filename">{{item.file.name}}</div>
-      <div class="file-progress">Place holder for file progress</div>
-
-      <div class="file-buttons">
-        <button type="button" (click)="item.upload()">Upload</button>
-        <button type="button" (click)="item.remove()">Remove</button>
+    <div class="file-data-wrapper" *ngIf="!displayResult">
+      <div class="search-checklist">
+        <app-saved-results class="saved-results-component" ></app-saved-results>
       </div>
 
+      <app-phase-three-results
+      [fileResults]="fileResults"
+      [isUploaded]="isUploaded"
+      class="phase-three-comp"
+      >
+      </app-phase-three-results>
+
+      <div class="file-controls">
+        <div *ngFor="let item of uploader.queue">
+          <div class="filename">{{item.file.name}}</div>
+          <div class="file-buttons">
+            <button class="btn" type="button" (click)="item.upload()">Upload</button>
+            <button class="btn" type="button" (click)="removeDisplayData()" (click)="item.remove()">Remove</button>
+            <button class="btn" type="button" (click)="displayResults(item)">Display Results</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="download-section" >
-    <div class="download-card" *ngFor="let item of attachmentList, let i = index">
-      <h3>{{item.originalName}}</h3>
-      <button type="button" (click)="download(i)">Download</button>
+ <!-- <div class="file-wrapper">
+    <div class="download-section" >
+      <div class="download-card" *ngFor="let item of attachmentList, let i = index">
+        <h3>{{item.originalName}}</h3>
+        <button type="button" (click)="download(i)">Download</button>
+      </div>  
     </div>
-  </div>
+  </div> -->
 
-    <span 
-    *ngIf="displayScrollUp"
-    (click)="scrollTop(scrollTo)"
-    id="arrow-up" >
-        <img src="../../../assets/images/upload.png" />
-    </span>
-
-    <app-phase-three-results
-      [jsonFile]="jsonFile"
-    >
-    </app-phase-three-results>
+  <span 
+  *ngIf="displayScrollUp"
+  (click)="scrollTop(scrollTo)"
+  id="arrow-up" >
+      <img src="../../../assets/images/upload.png" />
+  </span>
 </div>

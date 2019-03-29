@@ -1,16 +1,15 @@
-<div 
+<!--<div 
   *ngIf="!isLargeDisplay"
   class="screen-container">
-  <div  
+  <div
+    *ngIf="isUploaded"  
     id="phase-three" 
     class="search-container">
     <div
     class="results"  
-    *ngFor='let item of jsonFile | keyvalue'>
+    *ngFor='let item of fileResults; let i = index'>
     <div 
     class="search-box">
-
-    
       <div class="search-results">
         <a target="_blank" class="search-title" href="{{ item.url }}">{{item.title}}</a>
         <a target="_blank" class="search-link" href="{{ item.url }}">{{item.link}}</a>
@@ -18,21 +17,22 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<!--<div 
-  class="screen-container-large">
+<div
+  *ngIf="isLargeDisplay">
   <div
-   class="results-large"  
-   *ngFor='let item of results | keyvalue'>
-    <div 
-    class="search-box-large"
-    *ngFor="let result of item.value">
-      <div class="search-results-large">
-        <a target="_blank" class="search-title-large" href="{{ result.link }}">{{result.title}}</a>
-        <a target="_blank" class="search-link-large" href="{{ result.link }}">{{result.link}}</a>
-        <p class="search-description-large" > {{result.description}} </p>
+    *ngIf="isUploaded"  
+    id="phase-three">
+    <div
+    *ngFor='let item of fileResults; let i = index'>
+    <div>
+    <div>
+        <a target="_blank" class="search-title" href="{{ item.url }}">{{item.title}}</a>
+        <a target="_blank" class="search-link" href="{{ item.url }}">{{item.link}}</a>
+        <p > {{item.description}} </p>
+        <button (click)="saveResult(item)" type="button">Save Result</button>
       </div>
     </div>
   </div>
-</div>  -->
+</div>

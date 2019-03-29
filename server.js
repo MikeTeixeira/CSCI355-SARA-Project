@@ -55,6 +55,8 @@ const onListening = () => {
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
+//Changes the environment on whether it's production or development
+//This needs to be fixed because it is currently not working correctly
 if(process.env.NODE_ENV !== "development"){
   process.env.ALLOW_ORIGIN = process.env.PROD_DOMAIN;
 } else {

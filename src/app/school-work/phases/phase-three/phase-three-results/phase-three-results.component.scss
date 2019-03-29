@@ -71,32 +71,6 @@
 }
 
 @media (min-width: 870px) and (max-width: 1440px) {
-  .search-title {
-    font-size: 20px;
-  }
-  .search-description {
-    height: 100%;
-  }
-  .search-box {
-    background-color: #68829E;
-    padding: 20px;
-    border-radius: 10px;
-    max-height: 100px;
-    min-height: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.2em;
-  }
-  .search-description {
-    font-size: 15px;
-    width: 100%;
-    height: 60px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    display: -webkit-box;
-    line-height: 1.3em;
-  }
+
 }
 

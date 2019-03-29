@@ -25,6 +25,7 @@ import { DevelopersComponent } from './developers/developers.component';
 import { NavigatorComponent } from './browser/navigator/navigator.component';
 import { PhaseThreeComponent } from './school-work/phases/phase-three/phase-three.component';
 import { PhaseThreeResultsComponent } from './school-work/phases/phase-three/phase-three-results/phase-three-results.component';
+import { SavedResultsComponent } from './school-work/phases/saved-results/saved-results.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { PhaseThreeResultsComponent } from './school-work/phases/phase-three/pha
     NavigatorComponent,
     PhaseThreeComponent,
     PhaseThreeResultsComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    SavedResultsComponent
   ],
   imports: [
     BrowserModule,

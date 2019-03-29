@@ -5,13 +5,29 @@ import {FileService} from 'src/app/services/file.service';
   selector: 'app-phase-three-results',
   templateUrl: './phase-three-results.component.html',
   styleUrls: ['./phase-three-results.component.scss'],
-  inputs: ['jsonFile']
+  inputs: []
 })
 export class PhaseThreeResultsComponent implements OnInit {
 
-  public isLargeDisplay: boolean = false;
+  public isLargeDisplay: boolean = true;
 
-  constructor() { }
+  
+
+  //The file results are passed in from phaeThree component
+  //and displayed on the html file
+  @Input()
+  fileResults: any[];
+
+  //Fired only when the user clicks displays results
+  @Input()
+  isUploaded: boolean;
+
+  
+
+  constructor(private fs: FileService) { 
+
+
+  }
 
   ngOnInit() {
     if (window.innerWidth >= 870) {
@@ -24,13 +40,19 @@ export class PhaseThreeResultsComponent implements OnInit {
 
   @HostListener("window:resize", ['$event'])
   windowResize(event) {
-    let currentScreenSize = event.currentTarget.outerWidth;
-
+    let currentScreenSize = event.currentTarget.innerWidth;
     this.isLargeDisplay = currentScreenSize >= 870
       ? true
       : false;
+
+      console.log(this.fileResults);
+    
   }
 
-  onSubmit(e) {}
 
+
+  //Saves the result to an array
+  saveResult(result){
+    this.fs.savedResults.push(result);
   }
+}
