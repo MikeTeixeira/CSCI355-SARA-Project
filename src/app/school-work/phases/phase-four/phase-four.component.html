@@ -1,22 +1,33 @@
 <div>
 
-  <form>
-    <input #search type="text "/>
-    <button (click)="googleQuery(search)" type="submit"> Search </button>
-  </form>
+  <div class="phase-header">
+    <p class="current-phase"> Phase Four</p>
+  </div>
 
 
-  <div>
-    <li *ngFor="let result of searchResults; let i = index">
-      <p>{{result.title}}</p>
+  <div class="file-data-wrapper" >
+    <div class="search-form-wrapper">
+      <form class="search-form" >
+        <input placeholder="What's the meaning of life..." class="search-input" #search type="text "/>
+        <button class="search-btn" (click)="googleQuery(search)" type="submit"> Search </button>
+      </form>
+    </div>
 
-      <a href="{{result.link}}">{{result.link}}</a>
+    <div class="search-display">
+      <app-saved-results class="search-saved-results" ></app-saved-results>
 
-      <p>{{result.snippet}}</p>
-    </li>
+      <div class="search-results">
+        <li *ngFor="let result of googleSearchResults; let i = index">
+          <p>{{result.title}}</p>
 
+          <a href="{{result.link}}">{{result.link}}</a>
 
+          <p>{{result.snippet}}</p>
 
+          <button (click)="saveResult(result)">Save Result</button>
+        </li>
+      </div>
+    </div>
   </div>
 
 

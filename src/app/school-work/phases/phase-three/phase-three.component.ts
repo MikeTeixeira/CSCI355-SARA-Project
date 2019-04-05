@@ -39,13 +39,14 @@ export class PhaseThreeComponent implements OnInit {
 
   }
 
+  //Helper function to grab the incoming file
   retrieveFile(incomingFile){
-    let fileType = incomingFile.file.type;
     this.displayResults(incomingFile);
-
   }
 
 
+  //Checks to see if the current file is in the local dircetory onto the server
+  //If so, the file is pulled and read from
   displayResults(incomingFile){
       this._fileService.checkIfFileExists(incomingFile).subscribe((res: any) => {
       if(res){
@@ -61,10 +62,7 @@ export class PhaseThreeComponent implements OnInit {
 
 
 
-
-
-
-  //Grab the file we want to download
+  //Grab the file we want to download from the local directory
   download(id) {
     let filename = this.attachmentList[id].uploadname;
 

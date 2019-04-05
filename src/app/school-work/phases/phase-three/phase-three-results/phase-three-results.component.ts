@@ -22,6 +22,9 @@ export class PhaseThreeResultsComponent implements OnInit {
   @Input()
   isUploaded: boolean;
 
+  @Input()
+  searchResults: any[];
+
   
 
   constructor(private fs: FileService) { 
@@ -38,6 +41,7 @@ export class PhaseThreeResultsComponent implements OnInit {
 
   }
 
+  //Changes the screen size display depending on if the user shrinks/enlarges the browser window
   @HostListener("window:resize", ['$event'])
   windowResize(event) {
     let currentScreenSize = event.currentTarget.innerWidth;
@@ -51,7 +55,7 @@ export class PhaseThreeResultsComponent implements OnInit {
 
 
 
-  //Saves the result to an array
+  //Saves the result to the file service
   saveResult(result){
     this.fs.savedResults.push(result);
     

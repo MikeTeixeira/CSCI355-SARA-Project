@@ -58,32 +58,8 @@ export class FileService {
   };
 
 
-
-
-
-  //Currently creates a JSON file but must implement 
-  //creating a CSV and XML file
-  createAndDownloadJSONFile(body){
-    return this.http.post('http://localhost:3000/api/file/create', body, {
-      responseType:  'blob',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    })
-  }
-
-
-
-
-
-
-
-  createAndDownloadCSVFile(body){
-    return this.http.post('http://localhost:3000/api/file/create', body, {
-      responseType: 'blob',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
-    })
-
-  }
-
+  //creates a file based off the search results a user wishes to keep
+  //return of type blob is needed for a file format
   createAndDownloadFile(savedResults){
     return this.http.post('http://localhost:3000/api/file/create', savedResults, {
       responseType: 'blob',
@@ -91,6 +67,8 @@ export class FileService {
     })
   }
 
+
+  //Uses googles search custom api to pull in custom queries
   googleSearchApi(userSearch){
     return this.http.get(`
     ${this.GOOGLE_URL}key=${this.GOOGLE_KEY}&cx=${this.GOOGLE_CX}&q=${userSearch}`)

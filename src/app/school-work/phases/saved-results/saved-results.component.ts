@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FileService } from '../../../services/file.service';
 import { HttpClient } from '@angular/common/http';
 import {saveAs} from 'file-saver';
@@ -27,16 +27,25 @@ export class SavedResultsComponent implements OnInit {
     display: 'XML'},
   ];
 
+  @Input()
+  googleSearchResults: any[];
+
   constructor(private _fs: FileService, private _http: HttpClient) {
 
     this.savedResults = this._fs.savedResults;
+
+    // let url: string = window.location.href;
+    // if(url.endsWith('4')){
+    //   this.savedResults = 
+    // }
+
    }
 
   ngOnInit() {
   }
 
   //Creates a file from the stored results the user adds
-  //Beginning with downloading the file as JSON
+  //Downloads the specified file based on the filetype
   createFileAndDownload(){
       let body = {
         results: this.savedResults,
@@ -44,35 +53,22 @@ export class SavedResultsComponent implements OnInit {
       }
 
       let fileType = this.selectedFileType;
+      let fileEnding;
 
+      if(fileType == "application/json"){
+        fileEnding = ".json"
+      } else if(fileType == "text/csv"){
+        fileEnding = ".csv";
+      } else if(fileType == "text/xml"){
+        fileEnding = ".xml";
+      }
 
-    if(fileType == "application/json"){
-
-      this._fs.createAndDownloadJSONFile(body).subscribe(
-        data => saveAs(data, "saved-results.json"),
-        error => this.hasErrorDownloading = true
-      );
-    }
-
-
-
-    //Create a file to download as CSV
-    if(fileType === "text/csv"){
-      this._fs.createAndDownloadCSVFile(body).subscribe(
-        res => saveAs(res, "savedResultsCsv.csv"),
-        error => this.hasErrorDownloading = true  
-      );
-    }
-
-    //Create a file to download as XML
-    if(fileType == "text/xml"){
       this._fs.createAndDownloadFile(body).subscribe(
-        res => saveAs(res, "savedResultsXml.xml"),
+        data => saveAs(data, `saved-results${fileEnding}`),
         error => this.hasErrorDownloading = true
-      )
+      );
     }
 
-  }
 
   //When user selects a file type, we assign it to allow the user
   //to download the specified file type with the saved results

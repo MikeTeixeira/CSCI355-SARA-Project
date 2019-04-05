@@ -9,7 +9,9 @@ import { FileService } from '../../../services/file.service';
 })
 export class PhaseFourComponent implements OnInit {
 
-  searchResults: any[] = [];
+  public googleSearchResults: any[] = [];
+
+  public isUploaded: boolean = false;
 
 
 
@@ -22,7 +24,7 @@ export class PhaseFourComponent implements OnInit {
 
   googleQuery(userSearch: HTMLInputElement){
     this._fs.googleSearchApi(userSearch.value).subscribe((res) => {
-      this.searchResults = res.items;
+      this.googleSearchResults = res.items;
 
 
       setTimeout(() => {
@@ -30,4 +32,18 @@ export class PhaseFourComponent implements OnInit {
 
     });
   }
+
+
+  saveResult(result){
+    let formattedResult = {
+      title: result.title,
+      description: result.snippet,
+      url: result.link
+    }
+
+
+
+    this._fs.savedResults.push(formattedResult);
+  }
+
 }
