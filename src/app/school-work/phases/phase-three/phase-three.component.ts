@@ -49,7 +49,6 @@ export class PhaseThreeComponent implements OnInit {
   displayResults(incomingFile){
       this._fileService.checkIfFileExists(incomingFile).subscribe((res: any) => {
       if(res){
-        console.log(res);
         this.isUploaded = true;
         this.fileResults = res.results;
       } else {

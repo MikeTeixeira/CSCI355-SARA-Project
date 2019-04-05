@@ -26,8 +26,6 @@ export class PhaseFourComponent implements OnInit {
 
 
       setTimeout(() => {
-
-        console.log(res);
       }, 200);
 
     });
