@@ -34,6 +34,8 @@ export class PhaseFourComponent implements OnInit {
   }
 
 
+  //Since the incoming google result has many fields
+  //we only capture what we need and send it to our file service
   saveResult(result){
     let formattedResult = {
       title: result.title,
