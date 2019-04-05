@@ -23,7 +23,7 @@ export class PhaseFourComponent implements OnInit {
 
 
   googleQuery(userSearch: HTMLInputElement){
-    this._fs.googleSearchApi(userSearch.value).subscribe((res) => {
+    this._fs.googleSearchApi(userSearch.value).subscribe((res: any) => {
       this.googleSearchResults = res.items;
 
 
