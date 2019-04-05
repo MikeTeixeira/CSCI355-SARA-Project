@@ -1,4 +1,22 @@
+@import '../../../../styles.scss';
+
 @media(min-width: 800px) and (max-width: 1400px){
+
+    .phase-header{
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F1F1F2;
+
+        .current-phase{
+            font-size: 35px;
+            margin: 0px;
+            font-family: $navFont;
+        }
+
+    }
+
     .file-data-wrapper {
         position: relative;
         height: 515px;
