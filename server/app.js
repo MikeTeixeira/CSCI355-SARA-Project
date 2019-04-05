@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({extended: true|false}));
 //The dev_domain allows the calls to be worked with local host
 //to work in production, must change the origin to the production site domain
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://teixeiramichael.com/'),
+    res.setHeader('Access-Control-Allow-Origin', 'https://teixeiramichael.com/'),
         res.setHeader(
             'Access-Control-Allow-Headers',
             'Origin, X-Requested-With, Content-Type, Accept');
