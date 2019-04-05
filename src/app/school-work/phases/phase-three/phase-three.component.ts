@@ -39,36 +39,30 @@ export class PhaseThreeComponent implements OnInit {
 
   }
 
-  //Triggers the data from the file to be displayed
-  // promptDisplay(){
-  //   this.displayResult = false;
-  // }
-
-  //on click of the remove button, it removes the file from the uploader
-  //as well as the data presented
-  // removeDisplayData(){
-  //   this.fileResults = [];
-  // }
-
-  displayResults(item){
-    let fileType = item.file.type;
-    if(fileType === "application/json"){
-      this.displayJSON(item);
-    }
+  retrieveFile(incomingFile){
+    let fileType = incomingFile.file.type;
+    this.displayResults(incomingFile);
 
   }
 
-  displayJSON(data){
-    this._fileService.checkIfFileExists(data).subscribe((res: any) => {
+
+  displayResults(incomingFile){
+      this._fileService.checkIfFileExists(incomingFile).subscribe((res: any) => {
       if(res){
+        console.log(res);
         this.isUploaded = true;
         this.fileResults = res.results;
       } else {
         this.isUploaded = false;
-        this.errorFindingFile = `File: ${data.file.name} was not found`; 
+        this.errorFindingFile = `File: ${incomingFile.file.name} was not found`; 
       }
     });
   }
+
+
+
+
+
 
 
   //Grab the file we want to download

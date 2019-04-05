@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule } from '@angular/common/http';
 import {FileSelectDirective} from 'ng2-file-upload';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SchoolWorkComponent } from './school-work/school-work.component';
@@ -26,6 +27,8 @@ import { NavigatorComponent } from './browser/navigator/navigator.component';
 import { PhaseThreeComponent } from './school-work/phases/phase-three/phase-three.component';
 import { PhaseThreeResultsComponent } from './school-work/phases/phase-three/phase-three-results/phase-three-results.component';
 import { SavedResultsComponent } from './school-work/phases/saved-results/saved-results.component';
+import { DropdownModalComponent } from './accessory-comp/dropdown-modal/dropdown-modal.component';
+import { PhaseFourComponent } from './school-work/phases/phase-four/phase-four.component';
 
 @NgModule({
   declarations: [
@@ -52,12 +55,15 @@ import { SavedResultsComponent } from './school-work/phases/saved-results/saved-
     PhaseThreeComponent,
     PhaseThreeResultsComponent,
     FileSelectDirective,
-    SavedResultsComponent
+    SavedResultsComponent,
+    DropdownModalComponent,
+    PhaseFourComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   exports:[
 

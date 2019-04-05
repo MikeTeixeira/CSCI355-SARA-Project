@@ -1,0 +1,27 @@
+<div>
+
+  <form>
+    <input #search type="text "/>
+    <button (click)="googleQuery(search)" type="submit"> Search </button>
+  </form>
+
+
+  <div>
+    <li *ngFor="let result of searchResults; let i = index">
+      <p>{{result.title}}</p>
+
+      <a href="{{result.link}}">{{result.link}}</a>
+
+      <p>{{result.snippet}}</p>
+    </li>
+
+
+
+  </div>
+
+
+
+
+
+
+</div>

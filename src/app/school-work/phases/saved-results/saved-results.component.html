@@ -9,6 +9,13 @@
   </div>
 
   <div id="download-results" *ngIf="savedResults.length > 0" >
-    <button (click)="createFileAndDownload()" type="button">Download Results</button>
-  </div>
+    <form>
+      <select #t (change)="onSelectChange(t.value)" id="fileSelect">
+        <option *ngFor="let fileType of fileTypes" name="fileType.type" [value]="fileType.type">
+          {{fileType.display}}
+        </option>
+      </select>
+
+      <button (click)="createFileAndDownload()" type="button">Download Results</button>
+    </form>
 </div>

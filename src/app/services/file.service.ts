@@ -5,6 +5,8 @@ import {map} from "rxjs/operators";
 import {FileSelectDirective, FileUploader} from 'ng2-file-upload';
 import { Subject } from 'rxjs/internal/Subject';
 import { EventEmitter } from 'events';
+import { environment } from '../../environments/environment';
+import { Promise } from 'q';
 
 
 @Injectable({
@@ -15,6 +17,11 @@ export class FileService {
 
   private URL: string = "http://localhost:3000/api/file/create";
   public uploader: FileUploader = new FileUploader({url: this.URL});
+
+  private GOOGLE_KEY = environment.GOOGLE_API_KEY;
+  private GOOGLE_CX = environment.GOOGLE_CX_KEY;
+  private GOOGLE_URL = environment.GOOGLE_URL;
+
   
 
   //Variables to trigger the saved results
@@ -38,20 +45,57 @@ export class FileService {
     })
   }
 
+
+
+
+  
   //Grabs the file from the local directory
   checkIfFileExists(data){
     let fileName = data.file.name;
-    let fileType = data.file.type;
-    return this.http.get(`./assets/file-uploads/${fileName}`);
+
+    return this.http.get(`http://localhost:3000/api/file/retrieve/${fileName}`);
+    // return this.http.get(`./assets/file-uploads/${fileName}`);
   };
 
-  createAndDownload(body){
 
+
+
+
+  //Currently creates a JSON file but must implement 
+  //creating a CSV and XML file
+  createAndDownloadJSONFile(body){
     return this.http.post('http://localhost:3000/api/file/create', body, {
       responseType:  'blob',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     })
   }
+
+
+
+
+
+
+
+  createAndDownloadCSVFile(body){
+    return this.http.post('http://localhost:3000/api/file/create', body, {
+      responseType: 'blob',
+      headers: new HttpHeaders().append('Content-Type', 'application/json')
+    })
+
+  }
+
+  createAndDownloadFile(savedResults){
+    return this.http.post('http://localhost:3000/api/file/create', savedResults, {
+      responseType: 'blob',
+      headers: new HttpHeaders().append('Content-Type', 'application/json')
+    })
+  }
+
+  googleSearchApi(userSearch){
+    return this.http.get(`
+    ${this.GOOGLE_URL}key=${this.GOOGLE_KEY}&cx=${this.GOOGLE_CX}&q=${userSearch}`)
+  }
+
   
 
 

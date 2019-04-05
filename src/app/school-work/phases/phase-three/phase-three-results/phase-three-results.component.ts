@@ -54,5 +54,6 @@ export class PhaseThreeResultsComponent implements OnInit {
   //Saves the result to an array
   saveResult(result){
     this.fs.savedResults.push(result);
+    
   }
 }
