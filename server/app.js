@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({extended: true|false}));
 
 //'https://teixeiramichael.com'
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', process.env.DEV_DOMAIN),
+    res.setHeader('Access-Control-Allow-Origin', process.env.PROD_DOMAIN),
         res.setHeader(
             'Access-Control-Allow-Headers',
             'Origin, X-Requested-With, Content-Type, Accept');
