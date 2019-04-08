@@ -1,9 +1,10 @@
 <div class="content" >
   <div class="phase-card-wrapper">
     <div  *ngFor="let phase of phases; let i = index" class="phase-card">
-      <a href="{{phase.url}}">
+      <a class="phase-url" href="{{phase.url}}">
+        <p class="phase-title-etc slide-up " > Phase </p>
         <li>
-          <p class="phase-title" >{{phase.title}}</p>
+          <p class="phase-title" >{{i+2}}</p>
         </li>
       </a>
     </div>

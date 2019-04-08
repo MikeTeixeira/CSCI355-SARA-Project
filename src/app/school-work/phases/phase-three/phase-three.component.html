@@ -42,7 +42,7 @@
           <div class="filename">{{item.file.name}}</div>
           <div class="file-buttons">
             <button class="btn" type="button" (click)="item.upload()">Upload</button>
-            <button class="btn" type="button" (click)="removeDisplayData()" (click)="item.remove()">Remove</button>
+            <button class="btn" type="button" (click)="removeDisplayData(item)">Remove</button>
             <button class="btn" type="button" (click)="retrieveFile(item)">Display Results</button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 <div>
 
   <div class="phase-header">
+    <span id="back-btn"><a href="/portfolio/queens-college/phases">Back</a></span>
     <p class="current-phase"> Phase Four</p>
   </div>
 
@@ -18,21 +19,18 @@
 
       <div class="search-results">
         <li *ngFor="let result of googleSearchResults; let i = index">
-          <p>{{result.title}}</p>
+          <p class="search-title" >{{result.title}}</p>
 
-          <a href="{{result.link}}">{{result.link}}</a>
+          <a class="search-link"  href="{{result.link}}">{{result.link}}</a>
 
-          <p>{{result.snippet}}</p>
+          <p class="search-description" >{{result.snippet}}</p>
 
           <button (click)="saveResult(result)">Save Result</button>
         </li>
       </div>
+
     </div>
+
   </div>
-
-
-
-
-
 
 </div>

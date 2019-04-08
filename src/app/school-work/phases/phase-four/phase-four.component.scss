@@ -1,6 +1,15 @@
 @import '../../../../styles.scss';
 
-@media(min-width: 800px) and (max-width: 1400px){
+#back-btn {
+  font-family: $navFont;
+    position: absolute;
+    top: 25px;
+    left: 3%;
+
+}
+
+
+@media(min-width: 800px) and (max-width: 1900px){
 
     .phase-header{
         height: 100px;
@@ -66,19 +75,35 @@
 
     }
 
+
+    // Section for the results when user searchs
+
     .search-display {
         display: flex;
         flex-direction: row;
         padding-top: 70px;
+        padding-left: 15px;
 
 
         .search-saved-results {
-            flex: 1;
+            max-width: 250px;
+            min-width: 250px;
             text-align: center;
         }
 
         .search-results {
             flex: 3;
+            padding: 30px;
         }
     }
+
+    .search-title {
+        font-size: 20px;
+
+    }
+
+    .search-description {
+        width: 90%;
+    }
+
 }

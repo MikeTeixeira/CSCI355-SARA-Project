@@ -4,6 +4,10 @@
   height: 100%;
 }
 
+.phase-header{
+  font-family: $navFont;
+}
+
 #back-btn {
   position: absolute;
   top: 25px;
@@ -64,6 +68,10 @@ input[type="file"] {
 .btn {
   font-family: $navFont;
   letter-spacing: .05em;
+}
+
+#back-btn {
+  font-family: $navFont;
 }
 
 

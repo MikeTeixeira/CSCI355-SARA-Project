@@ -27,11 +27,11 @@ export class PhaseThreeComponent implements OnInit {
   public displayResult: boolean = false;
 
 
-  constructor(private _fileService: FileService, private http: HttpClient, private location: Location) {
+  constructor(private _fileService: FileService) {
+    
+
       this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-        if(status === 200){
-          this.attachmentList.push(JSON.parse(response));
-        }
+
     }
   }
 
@@ -57,6 +57,10 @@ export class PhaseThreeComponent implements OnInit {
         this.errorFindingFile = `File: ${incomingFile.file.name} was not found`; 
       }
     });
+  }
+
+  removeDisplayData(item: any){
+    this.uploader.removeFromQueue(item);
   }
 
 

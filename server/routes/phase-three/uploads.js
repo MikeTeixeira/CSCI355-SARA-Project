@@ -4,7 +4,7 @@ let FileModel = require('../../models/file');
 const multer = require('multer');
 let path = require('path');
 
-//Fast csv tor ead csv data
+//Fast csv to read csv data
 let csv = require('fast-csv');
 
 //Top converts xml to json
@@ -62,8 +62,6 @@ router.post("/upload", (req, res, next) => {
 
     //Create a new File and save it to the DB
     let file = new FileDB();
-
-    console.log(req.file);
 
     file.name = req.file.filename;
     file.type = req.file.mimetype;
@@ -123,13 +121,11 @@ router.post("/download", (req, res, next) => {
 
 
 
-
+//Retrieves a file that's located in the uploaded-files directory
 router.get("/retrieve/:fileName", (req,res,next) => {
 
   //Location of where the files are stored
   let filePath = path.join(__dirname,'../../../uploaded-files') + "/" + req.params.fileName;
-
-  console.log(req.params.fileName);
 
   let fileName = req.params.fileName;
 
@@ -171,6 +167,7 @@ router.get("/retrieve/:fileName", (req,res,next) => {
 
 
 
+  //Reads an XML file and converts the data into JSON
   if(fileName.endsWith(".xml")){
 
     fs.readFile(filePath, (err, data) => {
@@ -180,7 +177,7 @@ router.get("/retrieve/:fileName", (req,res,next) => {
       }
 
 
-      let json =  xmlParser.toJson(data, options);
+      let json =  xmlParser.toJson(data.toString()  , options);
 
 
 

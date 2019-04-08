@@ -33,12 +33,6 @@ export class SavedResultsComponent implements OnInit {
   constructor(private _fs: FileService, private _http: HttpClient) {
 
     this.savedResults = this._fs.savedResults;
-
-    // let url: string = window.location.href;
-    // if(url.endsWith('4')){
-    //   this.savedResults = 
-    // }
-
    }
 
   ngOnInit() {

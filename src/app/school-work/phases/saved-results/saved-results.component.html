@@ -2,14 +2,14 @@
 
 <div class="search-results">
   <div *ngFor="let result of savedResults" >
-    <li class="search-title" >
+    <li class="search-data" >
       <p>{{result.title}}</p>
       <p>{{result.url}}</p>   
     </li>
   </div>
 
   <div id="download-results" *ngIf="savedResults.length > 0" >
-    <form>
+    <form id="save-results-form" >
       <select #t (change)="onSelectChange(t.value)" id="fileSelect">
         <option *ngFor="let fileType of fileTypes" name="fileType.type" [value]="fileType.type">
           {{fileType.display}}
