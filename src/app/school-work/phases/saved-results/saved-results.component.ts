@@ -35,7 +35,24 @@ export class SavedResultsComponent implements OnInit {
     this.savedResults = this._fs.savedResults;
    }
 
+
+
   ngOnInit() {
+  }
+
+  //Fires component when the saved results in the FS change
+  ngDoCheck(): void {
+    if(this._fs.savedResults.length != this.savedResults.length){
+      this.savedResults = this._fs.savedResults;
+    }
+
+  }
+
+  //Removes the saved result from the list
+  removeSavedResult(id){
+    this._fs.savedResults = this._fs.savedResults.filter((res, resultId) => {
+        return id !== resultId;
+    })
   }
 
   //Creates a file from the stored results the user adds

@@ -55,6 +55,9 @@
   .search-link {
     font-size: 14px;
   }
+
+
+
   .search-description {
     font-size: 11px;
     margin-bottom: 0px;
@@ -71,6 +74,32 @@
 }
 
 @media (min-width: 870px) and (max-width: 1440px) {
+
+    .search-title {
+      font-size: 20px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid black;
+    }
+
+    .search-description {
+      width: 90%;
+    }
+
+  #phase-three{
+    padding: 20px;
+  }
+
+
+  .saved-btn {
+    background-color: #263659;
+    border-radius: 20px 20px 20px 20px;
+    border: none;
+    color: white;
+    height: 30px;
+    width: 100px;
+    margin-bottom: 15px;
+  }
+
 
 }
 

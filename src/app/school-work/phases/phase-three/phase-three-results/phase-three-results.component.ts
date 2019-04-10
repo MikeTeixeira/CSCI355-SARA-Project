@@ -48,8 +48,6 @@ export class PhaseThreeResultsComponent implements OnInit {
     this.isLargeDisplay = currentScreenSize >= 870
       ? true
       : false;
-
-      console.log(this.fileResults);
     
   }
 
@@ -58,6 +56,7 @@ export class PhaseThreeResultsComponent implements OnInit {
   //Saves the result to the file service
   saveResult(result){
     this.fs.savedResults.push(result);
-    
+
+    console.log(this.fs.savedResults);
   }
 }

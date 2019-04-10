@@ -29,9 +29,9 @@
     <div>
     <div>
         <a target="_blank" class="search-title" href="{{ item.url }}">{{item.title}}</a>
-        <a target="_blank" class="search-link" href="{{ item.url }}">{{item.link}}</a>
-        <p > {{item.description}} </p>
-        <button (click)="saveResult(item)" type="button">Save Result</button>
+        <a target="_blank" class="search-link" href="{{ item.url }}">{{item.url}}</a>
+        <p class="search-description" > {{item.description}} </p>
+        <button class="saved-btn" (click)="saveResult(item)" type="button">Save Result</button>
       </div>
     </div>
   </div>

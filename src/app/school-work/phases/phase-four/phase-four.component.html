@@ -20,12 +20,9 @@
       <div class="search-results">
         <li *ngFor="let result of googleSearchResults; let i = index">
           <p class="search-title" >{{result.title}}</p>
-
           <a class="search-link"  href="{{result.link}}">{{result.link}}</a>
-
           <p class="search-description" >{{result.snippet}}</p>
-
-          <button (click)="saveResult(result)">Save Result</button>
+          <button class="saved-btn" (click)="saveResult(result)">Save Result</button>
         </li>
       </div>
 

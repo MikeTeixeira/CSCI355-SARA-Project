@@ -21,15 +21,12 @@ export class PhaseThreeComponent implements OnInit {
   public attachmentList : any = [];
   public fileResults: any[] = [];
   public isUploaded: boolean = false;
-  public savedResults: any[] = [];
   public errorFindingFile: any;
 
   public displayResult: boolean = false;
 
 
   constructor(private _fileService: FileService) {
-    
-
       this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
 
     }
@@ -62,6 +59,9 @@ export class PhaseThreeComponent implements OnInit {
   removeDisplayData(item: any){
     this.uploader.removeFromQueue(item);
   }
+
+
+
 
 
 

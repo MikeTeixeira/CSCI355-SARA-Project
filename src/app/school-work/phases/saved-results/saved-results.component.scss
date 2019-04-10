@@ -14,11 +14,32 @@
 }
 
 
+.btn {
+    background-color: #263659;
+    border-radius: 20px 20px 20px 20px;
+    border: none;
+    color: white;
+    height: 30px;
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.download-btn {
+    background-color: #263659;
+    border-radius: 20px 20px 20px 20px;
+    border: none;
+    color: white;
+    height: 38px;
+    width: 150px;
+    margin-bottom: 15px;
+}
+
 // FORM SECTION
 
 #save-results-form {
-    height: 50px;
+    height: 100px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: space-around;
 

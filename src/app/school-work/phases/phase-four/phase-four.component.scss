@@ -89,6 +89,7 @@
             min-width: 250px;
             text-align: center;
             overflow: scroll;
+            border-right: 3px solid black;
         }
 
         .search-results {
@@ -101,11 +102,24 @@
 
     .search-title {
         font-size: 20px;
-
+        padding-bottom: 3px;
+        border-bottom: 1px solid black;
     }
+
 
     .search-description {
         width: 90%;
     }
+
+    .saved-btn {
+    background-color: #263659;
+    border-radius: 20px 20px 20px 20px;
+    border: none;
+    color: white;
+    height: 30px;
+    width: 100px;
+    margin-bottom: 15px;
+    }
+
 
 }

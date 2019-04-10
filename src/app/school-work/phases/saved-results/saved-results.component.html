@@ -1,10 +1,12 @@
 <h3> Saved Results</h3>
 
 <div class="search-results">
-  <div *ngFor="let result of savedResults" >
+  <div *ngFor="let result of savedResults; let i = index" >
     <li class="search-data" >
       <p>{{result.title}}</p>
-      <p>{{result.url}}</p>   
+      <p>{{result.url}}</p>
+
+      <button class="removeResult btn" (click)="removeSavedResult(i)" > Remove </button>   
     </li>
   </div>
 
@@ -16,6 +18,6 @@
         </option>
       </select>
 
-      <button (click)="createFileAndDownload()" type="button">Download Results</button>
+      <button class="download-btn" (click)="createFileAndDownload()" type="button">Download Results</button>
     </form>
 </div>
