@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({extended: true|false}));
 
 //'https://teixeiramichael.com'
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', process.env.PROD_DOMAIN),
+    res.setHeader('Access-Control-Allow-Origin', process.env.DEV_DOMAIN),
         res.setHeader(
             'Access-Control-Allow-Headers',
             'Origin, X-Requested-With, Content-Type, Accept');
@@ -48,9 +48,13 @@ app.use((req, res, next) => {
 });
 
 
+//Routes defiend for phase 5 of SARA project
+const wordRoutes = require('./routes/phase-five/wordRoutes.js');
+
 //Imports the upload routes to be used with the express server
-const uploadRoutes = require('./routes/phase-three/uploads.js');
-app.use('/api/file', uploadRoutes);
+const fileRoutes = require('./routes/phase-three/uploads.js');
+app.use('/api/file', fileRoutes);
+app.use('/api/words', wordRoutes);
 
 
 

@@ -29,6 +29,9 @@ import { PhaseThreeResultsComponent } from './school-work/phases/phase-three/pha
 import { SavedResultsComponent } from './school-work/phases/saved-results/saved-results.component';
 import { DropdownModalComponent } from './accessory-comp/dropdown-modal/dropdown-modal.component';
 import { PhaseFourComponent } from './school-work/phases/phase-four/phase-four.component';
+import { PhaseFiveComponent } from './school-work/phases/phase-five/phase-five.component';
+import { DummyPageOneComponent } from './school-work/dummy-page-one/dummy-page-one.component';
+import { DummyPageTwoComponent } from './school-work/dummy-page-two/dummy-page-two.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,9 @@ import { PhaseFourComponent } from './school-work/phases/phase-four/phase-four.c
     SavedResultsComponent,
     DropdownModalComponent,
     PhaseFourComponent,
+    PhaseFiveComponent,
+    DummyPageOneComponent,
+    DummyPageTwoComponent,
   ],
   imports: [
     BrowserModule,

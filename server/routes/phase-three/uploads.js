@@ -61,7 +61,7 @@ router.post("/upload", (req, res, next) => {
     }
 
     //Create a new File and save it to the DB
-    let file = new FileDB();
+    // let file = new FileDB();
 
     file.name = req.file.filename;
     file.type = req.file.mimetype;
