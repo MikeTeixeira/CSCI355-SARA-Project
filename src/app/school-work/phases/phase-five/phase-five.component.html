@@ -1,5 +1,61 @@
 <div>
+  <div class="phase-header">
+    <span id="back-btn"><a href="/portfolio/queens-college/phases">Back</a></span>
+    <p class="current-phase"> Phase Five </p>
+  </div>
 
 
+  <div class="file-data-wrapper" >
+    <div class="search-form-wrapper">
+      <form class="search-form" >
+        <input placeholder="Search for a keyword" class="search-input" #search type="text "/>
+        <button class="search-btn" (click)="getSearchInput(search)" type="submit"> Search </button>
+      </form>
 
+    <div class="selected-filters">
+
+      <h4 *ngIf="isCaseSensitive"> Case Sensitive </h4>
+      <input placeholder="Case Sensitive" *ngIf="isCaseSensitive" type="checkbox" [checked]="isCaseSensitive" (change)="isCaseSensitive = !isCaseSensitive" />
+
+      <h4 *ngIf="isPartialMatch"> Partial Match  </h4>
+      <input *ngIf="isPartialMatch" type="checkbox" [checked]="isPartialMatch" (change)="isPartialMatch = !isPartialMatch" />
+
+    </div>
+    </div>
+
+    <div class="search-display">
+      <app-saved-results class="search-saved-results" ></app-saved-results>
+
+      <div class="search-results">
+        <li *ngFor="let result of searchResults; let i = index">
+          <p class="search-title" >{{result.title}}</p>
+          <a class="search-link"  href="{{result.url}}">{{result.url}}</a>
+          <p class="search-description" >{{result.description}}</p>
+          <button class="saved-btn" (click)="saveResult(result)">Save Result</button>
+        </li>
+      </div>
+
+      <div class="right-settings">
+        <div class="filter-options">
+          <h2>Filter Options</h2>
+
+          <h4> Case Sensitive </h4>
+
+          <input type="checkbox" [checked]="isCaseSensitive" (change)="isCaseSensitive = !isCaseSensitive" />
+
+          <h4> Partial Match </h4>
+          <input type="checkbox" [checked]="isPartialMatch" (change)="isPartialMatch = !isPartialMatch" />
+
+        </div>
+
+        <div class="search-history">
+          <h2> Search History</h2>
+          <li *ngFor="let word of searchHistory; let i = index">
+            <p>{{word}}</p>
+          </li>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

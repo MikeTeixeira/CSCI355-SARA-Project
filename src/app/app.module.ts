@@ -32,6 +32,7 @@ import { PhaseFourComponent } from './school-work/phases/phase-four/phase-four.c
 import { PhaseFiveComponent } from './school-work/phases/phase-five/phase-five.component';
 import { DummyPageOneComponent } from './school-work/dummy-page-one/dummy-page-one.component';
 import { DummyPageTwoComponent } from './school-work/dummy-page-two/dummy-page-two.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { DummyPageTwoComponent } from './school-work/dummy-page-two/dummy-page-t
     PhaseFiveComponent,
     DummyPageOneComponent,
     DummyPageTwoComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

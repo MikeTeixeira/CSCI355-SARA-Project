@@ -1,4 +1,4 @@
-@import '../../../../styles.scss';
+@import '../../styles.scss';
 #back-btn {
   font-family: $navFont;
   position: absolute;
@@ -28,21 +28,16 @@
     overflow: hidden;
     padding-bottom: 35px;
   }
-
   .filter-options {
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
-
   .selected-filters {
     display: flex;
     align-items: center;
     width: 300px;
     justify-content: space-around;
-
-
   }
   .search-form-wrapper {
     position: relative;

@@ -7,18 +7,45 @@ import { HttpClient, HttpRequest, HttpResponse, HttpHeaders } from '@angular/com
 })
 export class SearchService {
 
-  private pageWordCount: any = {
-    "http://teixeiramichael.com/portfolio": {
-      url: "http://teixeiramichael.com",
-      words: 435
-    }
-  };
-  private url = 'https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States';
+  public userSearchObjects = [];
+
 
   constructor(private http: HttpClient) { }
 
-  
-  getPresidents(){
-    return this.http.get('http://localhost:3000/api/words/');
+
+  postAllWords(body){
+    let path = body.url.substr(21);
+    let mySite = "https://teixeiramichael.com" + path;
+
+    //creates a body to hold all the words and the url
+    body.url = mySite;
+
+    return this.http.post("http://localhost:3000/api/words/page-words", body);
   }
+
+  getResults(word, isCaseSensitive, isPartialMatch){
+
+    let wordToSearch = {
+      word: word,
+      isCaseSensitive: isCaseSensitive,
+      isPartialMatch: isPartialMatch
+    } 
+
+    return this.http.post("http://localhost:3000/api/crawler/get-results-of-matching-word", wordToSearch);
+  }
+
+  parseWebPage(page){
+
+    let pageToSearch = {
+      page: page
+    }
+
+    return this.http.post("http://localhost:3000/api/crawler/parse-url", pageToSearch);
+  }
+
+  getUserSearches(){
+
+    return this.http.get("http://localhost:3000/api/crawler/user-searches");
+  }
+
 }

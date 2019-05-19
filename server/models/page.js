@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let PageSchema = new Schema({
+let Page = new Schema({
     url: {type: String, required: true},
-    locationx: {type: Number, required: true},
-    locationy: {type: Number, required: true},
+    title: {type: String, required: true}, //From HTML meta deta
+    description: {type: String, required: true},
+    lastModified: {type: String, required: true},
+    lastIndexed: {type: String, required: true},
+    timeToIndex: {type: Number}
+
 })
 
-module.exports = mongoose.model('Page', PageSchema);
+module.exports = mongoose.model('Page', Page);

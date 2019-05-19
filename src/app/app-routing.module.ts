@@ -18,6 +18,7 @@ import { PhaseFourComponent } from 'src/app/school-work/phases/phase-four/phase-
 import { PhaseFiveComponent } from 'src/app/school-work/phases/phase-five/phase-five.component';
 import { DummyPageOneComponent } from './school-work/dummy-page-one/dummy-page-one.component';
 import { DummyPageTwoComponent } from './school-work/dummy-page-two/dummy-page-two.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'portfolio/queens-college/phases/3', component: PhaseThreeComponent},
   {path: 'portfolio/queens-college/phases/4', component: PhaseFourComponent},
   {path: 'portfolio/queens-college/phases/5', component: PhaseFiveComponent},
+  {path: 'portfolio/queens-college/admin', component: AdminComponent},
   {path: 'portfolio/queens-college/phases/5/dummy-page-one', component: DummyPageOneComponent},
   {path: 'portfolio/queens-college/phases/5/dummy-page-two', component: DummyPageTwoComponent},
   {path: 'browser/queens-college/browser', component: BrowserComponent},

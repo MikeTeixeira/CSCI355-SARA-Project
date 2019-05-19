@@ -1,0 +1,27 @@
+<div>
+      <div class="phase-header">
+    <span id="back-btn"><a href="/portfolio/queens-college/phases">Back</a></span>
+    <p class="current-phase"> Admin </p>
+  </div>
+
+
+  <div class="file-data-wrapper" >
+    <div class="search-form-wrapper">
+      <form class="search-form" >
+        <input placeholder="Paste a URL from Wikipedia" class="search-input" #search type="text "/>
+        <button class="search-btn" (click)="getSearchResults(search)" type="submit"> Read URL </button>
+      </form>
+    </div>
+
+    <div class="search-display">
+      <div class="search-results">
+        <li *ngFor="let userSearch of userSearches; let i = index">
+          <p class="search-title" >Terms for - {{userSearch.terms}}</p>
+          <span class="search-link" >{{userSearch.count}} Total Words</span>
+          <p class="search-description" >{{userSearch.timeToSearch}} ms</p>
+        </li>
+      </div>
+    </div>
+  </div>
+
+</div>

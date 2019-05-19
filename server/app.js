@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const upload = multer();
 const mongoose = require('mongoose');
+const sql = require('mysql');
 
 //Allows to use the .env file throughout this file
 require('dotenv').config();
@@ -11,7 +12,9 @@ require('dotenv').config();
 
 const app = express();
 
-//Connects to mongoDB by retrieving the environment variables in .env
+
+
+// Connects to mongoDB by retrieving the environment variables in .env
 mongoose
     .connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@portfolio-vyxha.mongodb.net/test?retryWrites=true`,{useNewUrlParser: true})
     .then(() => console.log("Successfully connecteed to mongoose"))
@@ -50,11 +53,13 @@ app.use((req, res, next) => {
 
 //Routes defiend for phase 5 of SARA project
 const wordRoutes = require('./routes/phase-five/wordRoutes.js');
+const crawlerRoutes = require("./routes/phase-five/crawler.js");
 
 //Imports the upload routes to be used with the express server
 const fileRoutes = require('./routes/phase-three/uploads.js');
 app.use('/api/file', fileRoutes);
 app.use('/api/words', wordRoutes);
+app.use('/api/crawler', crawlerRoutes);
 
 
 
