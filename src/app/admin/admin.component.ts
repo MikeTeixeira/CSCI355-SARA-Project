@@ -14,7 +14,7 @@ export class AdminComponent implements OnInit {
   constructor(private _ss: SearchService) {}
 
   ngOnInit() {
-    this._ss.getUserSearches().subscribe((res) => {
+    this._ss.getUserSearches().subscribe((res: any) => {
       this.userSearches = res
     })
   }
@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
 
     console.log(inputValue);
 
-    this._ss.parseWebPage(inputValue).subscribe(res => {
+    this._ss.parseWebPage(inputValue).subscribe((res: any) => {
       console.log(res);
     });
   }

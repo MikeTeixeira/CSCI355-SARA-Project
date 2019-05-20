@@ -27,7 +27,6 @@ import { NavigatorComponent } from './browser/navigator/navigator.component';
 import { PhaseThreeComponent } from './school-work/phases/phase-three/phase-three.component';
 import { PhaseThreeResultsComponent } from './school-work/phases/phase-three/phase-three-results/phase-three-results.component';
 import { SavedResultsComponent } from './school-work/phases/saved-results/saved-results.component';
-import { DropdownModalComponent } from './accessory-comp/dropdown-modal/dropdown-modal.component';
 import { PhaseFourComponent } from './school-work/phases/phase-four/phase-four.component';
 import { PhaseFiveComponent } from './school-work/phases/phase-five/phase-five.component';
 import { DummyPageOneComponent } from './school-work/dummy-page-one/dummy-page-one.component';
@@ -60,7 +59,6 @@ import { AdminComponent } from './admin/admin.component';
     PhaseThreeResultsComponent,
     FileSelectDirective,
     SavedResultsComponent,
-    DropdownModalComponent,
     PhaseFourComponent,
     PhaseFiveComponent,
     DummyPageOneComponent,

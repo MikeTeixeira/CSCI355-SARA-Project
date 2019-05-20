@@ -30,7 +30,7 @@ export class PhaseFiveComponent implements OnInit {
 
     
 
-    this._ss.getResults(inputValue, this.isCaseSensitive, this.isPartialMatch).subscribe(res => {
+    this._ss.getResults(inputValue, this.isCaseSensitive, this.isPartialMatch).subscribe((res: any) => {
       this.searchResults = res.pages;
 
       console.log(this.searchResults);

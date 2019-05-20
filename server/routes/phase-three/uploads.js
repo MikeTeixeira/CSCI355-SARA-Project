@@ -9,7 +9,7 @@ let csv = require('fast-csv');
 
 //Top converts xml to json
 //Second converts json to xml
-let xmlParser = require('xml2json');
+// let xmlParser = require('xml2json');
 var js2xmlparser = require("js2xmlparser");
 
 //Faster to read csv data to json
